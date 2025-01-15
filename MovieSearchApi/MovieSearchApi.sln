@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearchApi", "MovieSearchApi\MovieSearchApi.csproj", "{BCFDB06B-4820-4E1B-BAD2-4CDFA5CDE48D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{D99C9BE9-F0C9-420D-B44D-8FC4F3623A6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{AA8FA6DE-209A-4F65-8B41-2967850A9D7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,15 @@ Global
 		{BCFDB06B-4820-4E1B-BAD2-4CDFA5CDE48D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCFDB06B-4820-4E1B-BAD2-4CDFA5CDE48D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCFDB06B-4820-4E1B-BAD2-4CDFA5CDE48D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D99C9BE9-F0C9-420D-B44D-8FC4F3623A6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D99C9BE9-F0C9-420D-B44D-8FC4F3623A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D99C9BE9-F0C9-420D-B44D-8FC4F3623A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D99C9BE9-F0C9-420D-B44D-8FC4F3623A6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA8FA6DE-209A-4F65-8B41-2967850A9D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA8FA6DE-209A-4F65-8B41-2967850A9D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA8FA6DE-209A-4F65-8B41-2967850A9D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA8FA6DE-209A-4F65-8B41-2967850A9D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal

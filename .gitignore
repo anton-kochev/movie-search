@@ -2,3 +2,7 @@
 /MovieSearchApi/MovieSearchApi/bin
 /MovieSearchApi/.idea
 /MovieSearchApi/MovieSearchApi/obj
+/MovieSearchApi/Application/bin
+/MovieSearchApi/Application/obj
+/MovieSearchApi/Domain/obj
+/MovieSearchApi/Domain/bin
