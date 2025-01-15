@@ -1,8 +1,7 @@
 :host {
   display: grid;
   gap: 0.5em;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  // grid-template-rows: repeat(auto-fill, minmax(150px, 150px));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   .movies-display {
     &__no-movies {

@@ -1,12 +1,11 @@
 import { Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
 import { Movie } from '../movie';
 
 @Component({
   selector: 'app-movie-tile',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule],
+  imports: [MatButtonModule],
   templateUrl: './tile.component.html',
   styleUrl: './tile.component.scss',
 })

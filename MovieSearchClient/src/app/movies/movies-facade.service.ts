@@ -51,17 +51,6 @@ export class MoviesFacadeService {
   }
 
   public searchMovies(criteria: MovieSearchCriteria): void {
-    // this.moviesApiService.getMovies(search).subscribe({
-    //   next: result => {
-    //     this.movies.next(result);
-    //   },
-    //   error: error => {
-    //     console.log(
-    //       'Error occurred while fetching movies from the server',
-    //       error,
-    //     );
-    //   },
-    // });
     this.criteria.next(criteria);
   }
 }

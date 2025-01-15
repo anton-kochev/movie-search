@@ -3,7 +3,7 @@ using Domain.Entities;
 
 namespace Application.Movies.Queries.GetMovies;
 
-public record MovieDto(Guid Id, string Title, int ReleaseYear);
+public record MovieDto(Guid Id, string Title, int ReleaseYear, string Poster);
 
 public static class MovieDtoExtensions
 {
@@ -12,8 +12,8 @@ public static class MovieDtoExtensions
         return entities.Select(entity => entity.ToDto());
     }
 
-    public static MovieDto ToDto(this Movie entity)
+    private static MovieDto ToDto(this Movie entity)
     {
-        return new MovieDto(Guid.Parse(entity.Id), entity.Title, entity.ReleaseYear);
+        return new MovieDto(Guid.Parse(entity.Id), entity.Title, entity.ReleaseYear, entity.Poster);
     }
 }
