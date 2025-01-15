@@ -1,4 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+@use 'assets/theming/default-theme';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  @include mat.core-theme(default-theme.$light);
+  @include mat.button-theme(default-theme.$light);
+}
+
+html {
+  // Apply the dark theme by default
+  @include mat.core-color(default-theme.$light);
+  @include mat.button-color(default-theme.$light);
+
+  // Comment out the line below if you want to use the pre-defined typography utility classes.
+  // For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+  @include mat.typography-hierarchy(default-theme.$light);
+
+  // When using system variables, remember to provide values for them..
+  @include mat.system-level-colors(default-theme.$light);
+  @include mat.system-level-typography(default-theme.$light);
+
+  // Apply the light theme only when the user prefers light themes.
+  @media (prefers-color-scheme: dark) {
+    // Use the `-color` mixins to only apply color styles without reapplying the same
+    // typography and density styles.
+    @include mat.core-color(default-theme.$dark);
+    @include mat.button-color(default-theme.$dark);
+
+    @include mat.typography-hierarchy(default-theme.$dark);
+
+    // When using system variables, remember to provide values for them..
+    @include mat.system-level-colors(default-theme.$dark);
+    @include mat.system-level-typography(default-theme.$dark);
+  }
+}
 
 html,
 body {
@@ -6,7 +51,8 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .form-field {
