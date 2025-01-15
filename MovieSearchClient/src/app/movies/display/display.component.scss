@@ -1,0 +1,17 @@
+:host {
+  display: grid;
+  gap: 0.5em;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  // grid-template-rows: repeat(auto-fill, minmax(150px, 150px));
+
+  .movies-display {
+    &__no-movies {
+      display: grid;
+      place-items: center;
+    }
+    &__error {
+      display: grid;
+      place-items: center;
+    }
+  }
+}

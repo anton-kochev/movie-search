@@ -34,8 +34,10 @@ public sealed class MoviesRepository : IMoviesRepository
         });
     }
 
-    public Task<IEnumerable<Movie>> GetMoviesAsync(MovieSearchCriteria search, CancellationToken cancellationToken)
+    public async Task<IEnumerable<Movie>> GetMoviesAsync(MovieSearchCriteria search,
+        CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return (await GetMoviesAsync(cancellationToken)).Where(movie =>
+            movie.Title.Contains(search.Title, StringComparison.OrdinalIgnoreCase));
     }
 }

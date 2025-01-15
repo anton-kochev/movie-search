@@ -22,8 +22,8 @@ public class MoviesController(IMediator mediator, ILogger<MoviesController> logg
         CancellationToken cancellationToken)
     {
         logger.LogInformation("GetMovies for {s}", s);
-        
-        IEnumerable<MovieDto> movies = await mediator.Send(new GetMoviesQuery(s), cancellationToken);
+
+        IEnumerable<MovieDto> movies = await mediator.Send(new GetMoviesQuery(s ?? string.Empty), cancellationToken);
 
         return Ok(movies);
     }

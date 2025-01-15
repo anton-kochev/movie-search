@@ -3,7 +3,7 @@ using Domain.Entities;
 
 namespace Application.Movies.Queries.GetMovies;
 
-public record MovieDto(Guid Id, string Title, Year ReleaseDate);
+public record MovieDto(Guid Id, string Title, int ReleaseYear);
 
 public static class MovieDtoExtensions
 {

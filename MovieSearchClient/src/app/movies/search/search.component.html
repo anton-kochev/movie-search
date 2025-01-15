@@ -1,0 +1,21 @@
+<form [formGroup]="searchForm">
+  <mat-form-field
+      class="form-field"
+      appearance="outline"
+  >
+    <input
+        #titleInput
+        matInput
+        placeholder="Simple placeholder"
+        formControlName="title"
+        type="text"
+    />
+    @if (loading()) {
+    <mat-spinner
+        matSuffix
+        [diameter]="28"
+        style="margin-right: 1em;"
+    ></mat-spinner>
+    }
+  </mat-form-field>
+</form>
