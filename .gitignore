@@ -6,3 +6,5 @@
 /MovieSearchApi/Application/obj
 /MovieSearchApi/Domain/obj
 /MovieSearchApi/Domain/bin
+/MovieSearchApi/Infrastructure/obj
+/MovieSearchApi/Infrastructure/bin
