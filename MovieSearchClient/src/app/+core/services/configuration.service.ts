@@ -1,5 +1,6 @@
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'environments/environment';
 import { firstValueFrom, map, tap } from 'rxjs';
 
 interface Configuration {
@@ -22,7 +23,7 @@ export class ConfigurationService {
 
   public load(): Promise<boolean> {
     return firstValueFrom(
-      this.httpClient.get<Configuration>('./assets/app-config.local.json').pipe(
+      this.httpClient.get<Configuration>(environment.pathToConfig).pipe(
         tap(config => this.setConfig(config)),
         map(() => true),
       ),
