@@ -1,11 +1,32 @@
+using System.Text.Json;
 using Application;
 using Infrastructure;
+using Microsoft.Azure.Cosmos;
+using Microsoft.Azure.Cosmos.Fluent;
+using Microsoft.OpenApi.Models;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
+
+builder.Services
+    .Configure<JsonSerializerOptions>(options =>
+    {
+        options.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    })
+    .AddSingleton<CosmosClient>(_ =>
+    {
+        string? connectionString = builder.Configuration.GetConnectionString("CosmosDb");
+        if (string.IsNullOrWhiteSpace(connectionString))
+        {
+            throw new InvalidOperationException(
+                "The CosmosDb connection string is not defined in local.settings.json");
+        }
+
+        return new CosmosClientBuilder(connectionString).Build();
+    });
 
 // Configure CORS policy
 builder.Services.AddCors(options =>
@@ -24,7 +45,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigureSwaggerGen(setup =>
 {
-    setup.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    setup.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Movie Adviser Service",
         Version = "v1"
@@ -41,8 +62,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-// app.UseStaticFiles();
-// app.UseRouting();
 
 app.UseCors();
 
