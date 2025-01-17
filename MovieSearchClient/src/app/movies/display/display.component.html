@@ -1,11 +1,8 @@
-@if (error()) {
-<div class="movies-display__error">An error occurred. Please try again</div>
-}
-@else if (movies().length === 0) {
-<div class="movies-display__no-movies">No movies found</div>
+@if (movies().length === 0) {
+<div class="movies-display__no-movies">No movies</div>
 }
 @else {
-@for (movie of movies(); track $index) {
+@for (movie of movies(); track movie.id) {
 <app-movie-tile [movie]="movie"></app-movie-tile>
 }
 }

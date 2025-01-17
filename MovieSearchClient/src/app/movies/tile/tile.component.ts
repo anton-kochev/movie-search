@@ -10,5 +10,10 @@ import { Movie } from '../movie';
   styleUrl: './tile.component.scss',
 })
 export class TileComponent {
-  public movie = input<Movie>({ title: '', releaseYear: 0, poster: '' });
+  public movie = input<Movie>({
+    id: '',
+    title: '',
+    releaseYear: 0,
+    poster: '',
+  });
 }

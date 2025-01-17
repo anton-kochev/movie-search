@@ -2,7 +2,4 @@
     [loading]="(loading$ | async) ?? false"
     (searchCriteriaChanged)="onSearchCriteriaChanged($event)"
 ></app-movie-search>
-<app-movie-display
-    [movies]="(movies$ | async) ?? []"
-    [error]="(error$ | async) ?? false"
-></app-movie-display>
+<app-movie-display [movies]="(movies$ | async) ?? []"></app-movie-display>

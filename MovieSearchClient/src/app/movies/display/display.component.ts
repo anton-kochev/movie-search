@@ -10,6 +10,5 @@ import { TileComponent } from '../tile/tile.component';
   templateUrl: './display.component.html',
 })
 export class DisplayComponent {
-  public readonly error = input<boolean>(false);
   public readonly movies = input<Movie[]>([]);
 }
